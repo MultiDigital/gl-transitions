@@ -54,8 +54,8 @@ vec4 transition(vec2 uv) {
     /* randomize the lookup values to hide the fixed number of samples */
     float offset = rand(uv);
 
-    for (float t = 0.0; t <= 40.0; t++) {
-        float percent = (t + offset) / 40.0;
+    for (float t = 0.0; t <= 80.0; t++) {
+        float percent = (t + offset) / 35.0;
         float weight = 4.0 * (percent - percent * percent);
         color += crossFade(texCoord + toCenter * percent * strength, dissolve) * weight;
         total += weight;
